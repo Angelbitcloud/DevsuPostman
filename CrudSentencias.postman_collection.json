@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "a393174a-af7c-4b91-8142-72b11624318a",
+		"name": "CrudSentencias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CrearCliente",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": \"105568164\",\r\n  \"clave\": \"1596321\",\r\n  \"estado\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/clientes/crear-cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"crear-cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerCliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/clientes/obtener-cliente/?idCliente=105568164",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"clientes",
+						"obtener-cliente",
+						""
+					],
+					"query": [
+						{
+							"key": "idCliente",
+							"value": "105568164",
+							"description": "{idCliente} es el identificador del cliente que se desea obtener"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearCuenta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "      {\r\n          \"idCliente\": \"105568164\",\r\n          \"numeroCuenta\": \"42118548\",\r\n          \"tipoCuenta\": \"Ahorros\",\r\n          \"saldoInicial\": 500000,\r\n          \"estado\": true\r\n      }\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cuentas/crear-cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuentas",
+						"crear-cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerCuenta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/cuentas/obtener-cuenta/?idCliente=105568164",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cuentas",
+						"obtener-cuenta",
+						""
+					],
+					"query": [
+						{
+							"key": "idCliente",
+							"value": "105568164"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearMovimiento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"123456789\",\r\n    \"numeroCuenta\": \"123456789\",\r\n    \"valor\": 100000,\r\n    \"tipoMovimiento\": \"DEBITO\",\r\n    \"saldo\": 100000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/movimientos/crear-movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"movimientos",
+						"crear-movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerMovimientos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movimientos\": [\r\n        {\r\n            \"numeroCuenta\": \"123456789\",\r\n            \"saldoActual\": 100000,\r\n            \"fechaMovimiento\": \"2023-05-11T16:17:14.413+00:00\",\r\n            \"tipoMovimiento\": \"DEBITO\",\r\n            \"valorMovimiento\": 100000\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/movimientos/obtener-cuenta/?numeroCuenta=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"movimientos",
+						"obtener-cuenta",
+						""
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reportes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaInicio\": \"2022-01-01\",\r\n    \"fechaFin\": \"2022-01-31\",\r\n    \"clienteId\": \"105568164\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reportes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reportes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
