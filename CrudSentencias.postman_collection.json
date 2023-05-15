@@ -172,7 +172,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"fecha\": \"123456789\",\r\n    \"numeroCuenta\": \"123456789\",\r\n    \"valor\": 100000,\r\n    \"tipoMovimiento\": \"DEBITO\",\r\n    \"saldo\": 100000\r\n}\r\n",
+					"raw": "{\r\n    \"fecha\": \"2022-01-01\",\r\n    \"valor\": 100000,\r\n    \"tipoMovimiento\": \"DEBITO\",\r\n    \"saldo\": 100000\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -218,7 +218,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/movimientos/obtener-cuenta/?numeroCuenta=1",
+					"raw": "http://localhost:8000/movimientos/obtener-cuenta/?fecha=2022-01-01",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -231,8 +231,8 @@
 					],
 					"query": [
 						{
-							"key": "numeroCuenta",
-							"value": "1"
+							"key": "fecha",
+							"value": "2022-01-01"
 						}
 					]
 				}
